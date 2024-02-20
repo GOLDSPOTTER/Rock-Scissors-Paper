@@ -15,6 +15,10 @@ public class Program
 		if (ans == "E" || ans == "e")
 			lobby = false;
 		}
+		
+		bool gameloop = true;
+		while (gameloop)
+	{	
 		Console.WriteLine("r for rock, s for scissors, p for paper");
 		string i = Console.ReadLine();
 		if (i == "r"){
@@ -32,21 +36,19 @@ public class Program
 			Console.WriteLine("Opponent chose rock");
 		}else if (randomValue == 1){
 			Console.WriteLine("Opponent chose scissors");
-		}else if (randomValue == 2)
+		}else if (randomValue == 2){
 			Console.WriteLine("Opponent chose paper");
-			
+		} 
 		if (sum == 0){
 			Console.WriteLine("It's a draw!");
 		}else if (sum == 1 || sum == -2){
 			Console.WriteLine("You win!");
 		}else if (sum == 2 || sum == -1){
 				Console.WriteLine("You lost");
-		
-		}
 			
-		
-			 
+	}
+		}
+	
 		
 		}
-
 }

@@ -16,17 +16,29 @@ public class Program
 			lobby = false;
 		}
 		
-		bool gameloop = true;
-		while (gameloop)
+		
+		while (true)
 	{	
+		bool valid = false;
+		while (!valid)
+		{
+		valid = false;
 		Console.WriteLine("r for rock, s for scissors, p for paper");
 		string i = Console.ReadLine();
-		if (i == "r"){
+		if (i == "r" || i == "R"){
+			Console.WriteLine("Player chose rock");
+			valid = true;
 			myVariable = 0;
-		}else if (i == "s"){
+		}else if (i == "s" || i == "S"){
+			Console.WriteLine("Player chose scissors");
+			valid = true;
 			myVariable = 1;
-		}else if (i == "p"){
+		}else if (i == "p" || i == "P"){
+			Console.WriteLine("Player chose paper");
+			valid = true;
 			myVariable = 2;
+
+			}
 		}
 		
 		Random rand = new Random();

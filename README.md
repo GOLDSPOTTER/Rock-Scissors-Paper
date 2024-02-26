@@ -6,13 +6,14 @@ public class Program
 	{
 		int myVariable;
 		int j = 1;
-		myVariable = j;
+		myVariable = j; 						
 		bool lobby = true;
-		while (lobby)
+		Console.Write("Welcome to Rock Paper Scissors! "); //Game welcome
+		while (lobby) 
 		{
 		  Console.WriteLine("Click E to exit");
 		string ans = Console.ReadLine();
-		if (ans == "E" || ans == "e")
+		if (ans == "E" || ans == "e") //Since C# is caps sensitive, this code detects caps and lowers
 			lobby = false;
 		}
 		
@@ -23,7 +24,7 @@ public class Program
 		while (!valid)
 		{
 		valid = false;
-		Console.WriteLine("r for rock, s for scissors, p for paper");
+		Console.WriteLine("r for rock, s for scissors, p for paper"); //Asking for input
 		string i = Console.ReadLine();
 		if (i == "r" || i == "R"){
 			Console.WriteLine("Player chose rock");
@@ -41,7 +42,7 @@ public class Program
 			}
 		}
 		
-		Random rand = new Random();
+		Random rand = new Random(); //Randomised move for opponent
 		int randomValue = rand.Next(0,2);
 		int sum = randomValue - myVariable;
 		if (randomValue == 0){
@@ -52,11 +53,11 @@ public class Program
 			Console.WriteLine("Opponent chose paper");
 		} 
 		if (sum == 0){
-			Console.WriteLine("It's a draw!");
-		}else if (sum == 1 || sum == -2){
-			Console.WriteLine("You win!");
-		}else if (sum == 2 || sum == -1){
-				Console.WriteLine("You lost");
+			Console.WriteLine("It's a draw!");       //Key: 0 = draw | 1 = win | 2 = lose | -1 = lose | -2 = win
+		}else if (sum == 1 || sum == -2){			//Rock = 0
+			Console.WriteLine("You win!");			//Scissors = 1
+		}else if (sum == 2 || sum == -1){			//Paper = 2
+				Console.WriteLine("You lost");		//Results are subtracted
 			
 	}
 		}

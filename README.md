@@ -60,13 +60,13 @@ public class Program
 			Console.WriteLine("Opponent chose paper");
 		} 
 		if (sum == 0){
-			Console.WriteLine("It's a draw!");       //Key: 0 = draw | 1 = win | 2 = lose | -1 = lose | -2 = win
-		}else if (sum == 1 || sum == -2){			//Rock = 0
-			Console.WriteLine("You win!");			//Scissors = 1
-			points1 = points1 + 1;
-		}else if (sum == 2 || sum == -1){			//Paper = 2
-				Console.WriteLine("You lost");		//Results are subtracted
-				points2 = points2 + 1;
+			Console.WriteLine("It's a draw!");   //Draw			  				    //Key: 0 = draw | 1 = win | 2 = lose | -1 = lose | -2 = win
+		}else if (sum == 1 || sum == -2){											//Rock = 0
+			Console.WriteLine("You win!");											//Scissors = 1
+			points1 = points1 + 1;	//Points increase for player
+		}else if (sum == 2 || sum == -1){											//Paper = 2
+				Console.WriteLine("You lost");										//Results are subtracted
+				points2 = points2 + 1; //Point increase for computer
 			
 	}
 			

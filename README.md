@@ -17,9 +17,13 @@ public class Program
 			lobby = false;
 		}
 		
-		
-		while (true)
+		Console.WriteLine("How much rounds would you like to play?");
+		int rounds = Convert.ToInt32(Console.ReadLine());
+		int points1 = 0;
+		int points2 = 0;
+		while (rounds > 0)
 	{	
+		rounds = rounds - 1;
 		bool valid = false;
 		while (!valid)
 		{
@@ -27,14 +31,17 @@ public class Program
 		Console.WriteLine("r for rock, s for scissors, p for paper"); //Asking for input
 		string i = Console.ReadLine();
 		if (i == "r" || i == "R"){
+			Console.Clear();
 			Console.WriteLine("Player chose rock");
 			valid = true;
 			myVariable = 0;
 		}else if (i == "s" || i == "S"){
+			Console.Clear();
 			Console.WriteLine("Player chose scissors");
 			valid = true;
 			myVariable = 1;
 		}else if (i == "p" || i == "P"){
+			Console.Clear();
 			Console.WriteLine("Player chose paper");
 			valid = true;
 			myVariable = 2;
@@ -56,12 +63,16 @@ public class Program
 			Console.WriteLine("It's a draw!");       //Key: 0 = draw | 1 = win | 2 = lose | -1 = lose | -2 = win
 		}else if (sum == 1 || sum == -2){			//Rock = 0
 			Console.WriteLine("You win!");			//Scissors = 1
+			points1 = points1 + 1;
 		}else if (sum == 2 || sum == -1){			//Paper = 2
 				Console.WriteLine("You lost");		//Results are subtracted
+				points2 = points2 + 1;
 			
 	}
-		}
-	
+			
+		}Console.WriteLine("Round over! You have " + points1 + " points, your opponent has " + points2 + " points");
+			Console.WriteLine("Thank you for playing!");
+			
 		
 		}
 }

@@ -4,6 +4,7 @@ public class Program
 {
 	public static void Main()
 	{
+
 		int myVariable;
 		int j = 1;
 		myVariable = j; 						
@@ -17,8 +18,20 @@ public class Program
 			lobby = false;
 		}
 		
+		bool validans = false;
+		int rounds = 0;
+		while(!validans)
+		{
 		Console.WriteLine("How much rounds would you like to play?");
-		int rounds = Convert.ToInt32(Console.ReadLine());
+		 rounds = Convert.ToInt32(Console.ReadLine());
+			if ( rounds < 0 || rounds == 0){
+				Console.WriteLine("Invalid input Try again");
+			}else{
+				validans = true;
+				Console.Clear();
+			}
+		
+		}
 		int points1 = 0;
 		int points2 = 0;
 		while (rounds > 0)
@@ -59,14 +72,15 @@ public class Program
 		}else if (randomValue == 2){
 			Console.WriteLine("Opponent chose paper");
 		} 
-		if (sum == 0){
-			Console.WriteLine("It's a draw!");   //Draw			  				    //Key: 0 = draw | 1 = win | 2 = lose | -1 = lose | -2 = win
+		if (sum == 2 || sum == -1){
+			Console.WriteLine("You lost");  	  				    //Key: 0 = draw | 1 = win | 2 = lose | -1 = lose | -2 = win
+			points2 = points2 + 1; //Point increase for computer
 		}else if (sum == 1 || sum == -2){											//Rock = 0
 			Console.WriteLine("You win!");											//Scissors = 1
 			points1 = points1 + 1;	//Points increase for player
-		}else if (sum == 2 || sum == -1){											//Paper = 2
-				Console.WriteLine("You lost");										//Results are subtracted
-				points2 = points2 + 1; //Point increase for computer
+		}else if (sum == 0){															//Paper = 2		
+				Console.WriteLine("It's a draw!");	 //Draw								//Results are subtracted
+				
 			
 	}
 			
